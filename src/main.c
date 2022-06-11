@@ -20,6 +20,11 @@ int	main(int ac, char **av)
 	map = sl_parse(ac, av, &size);
 	if (!map)
 		return (0);
+	if (size < 3)
+	{
+		ft_printf("Error\nNot a valid path");
+		return (0);
+	}
 	if (!sl_check_map(map, &game, size))
 	{
 		sl_free_map(map, size);
