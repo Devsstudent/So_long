@@ -6,7 +6,7 @@
 /*   By: odessein <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 19:10:11 by odessein          #+#    #+#             */
-/*   Updated: 2022/06/10 20:34:31 by odessein         ###   ########.fr       */
+/*   Updated: 2022/06/12 22:43:06 by odessein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "sl.h"
@@ -60,7 +60,7 @@ t_bool	ft_check_wall(char **map, int size)
 
 	i = 1;
 	size_l = ft_strlen(*map) - 1;
-	if (!ft_check_line_wall(*map) && !ft_check_line_wall(map[size - 1]))
+	if (!ft_check_line_wall(*map) || !ft_check_line_wall(map[size - 1]))
 	{
 		ft_printf("Error\nMap not correctly surrounded by walls");
 		return (FALSE);
